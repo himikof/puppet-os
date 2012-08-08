@@ -1,5 +1,3 @@
-import 'os_gentoo'
-
 # Class os
 #
 #  Handle tasks specific to different operating systems
@@ -21,14 +19,4 @@ class os {
   $sysrundir     = "${localstatedir}/run"
   $statelibdir   = "${localstatedir}/lib"
   $logdir        = "${localstatedir}/log"
-
-  case $operatingsystem {
-    gentoo: {
-      include gentoo::etc::portage::backup
-      include gentoo::etc::portage
-      include gentoo::etc::portage::restore
-    }
-    default: {
-    }
-  }
 }
